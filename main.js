@@ -58,9 +58,10 @@ document.addEventListener(
     let chapter4 = document.getElementById("chapter4");
     let chapter5 = document.getElementById("chapter5");
     let footer = document.getElementById("footer");
-    let progress = document.getElementById("progress");
+    let location = document.getElementById("location");
     let backToTop = document.getElementById("back-to-top");
-    progress.style.width = "0%";
+    location.style.width = "0%";
+
     window.addEventListener("scroll", function(e) {
       let scrollWithTop = window.pageYOffset;
 
@@ -71,15 +72,9 @@ document.addEventListener(
         backToTop.style.display = "none";
       }
 
-      //   progress.value = (scrollWithTop / (chapter5.offsetTop+100)) * 100;
       //   Cập nhật lại độ dài của progress
-      progress.style.width = `${(scrollWithTop / (chapter5.offsetTop + 100)) *
+      location.style.width = `${(scrollWithTop / (chapter5.offsetTop + 100)) *
         100}%`;
-      //   Làm việc set vị trí màn hình => chưa làm dc
-      progress.addEventListener("click", function(e) {
-        // window.pageYOffset = (+progress.value * chapter5.offsetTop) / 100;
-        console.log(123);
-      });
     });
   },
   false
